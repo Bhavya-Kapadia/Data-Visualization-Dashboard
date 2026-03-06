@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body style="background-image: url(purple.avif);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-re
+            peat;
+            margin: 0%;
+            height: 100vh;
+            display: flex;
+            justify-content:left;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: left;"
+
+            
+
+            >
+            
+    <h1 style="color: white;
+     text-shadow: 2px 2px 5px black;
+    text-align: left; text-align: left; text-align:center;" ><u style="width: 150px;">Bhavya Sports Sales Dashboard</u></h1>
+
+    
+<div class="city-table-container">
+    <table class="city-table">
+        <tr>
+            <th>City</th>
+            <th>Sales (₹)</th>
+        </tr>
+
+        <tr>
+            <td>Delhi</td>
+            <td>12000</td>
+        </tr>
+
+        <tr>
+            <td>Mumbai</td>
+            <td>15000</td>
+        </tr>
+
+        <tr>
+            <td>Ahmedabad</td>
+            <td>9000</td>
+        </tr>
+
+        <tr>
+            <td>Chennai</td>
+            <td>8000</td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td>44000</td>
+        </tr>
+    </table>
+</div>
+<style>
+.city-table-container {
+    position: absolute;      /* Change if needed */
+    top: 80px;              /* Adjust position */
+    left : 340px;             /* Adjust position */
+}
+
+.city-table {
+    width: 150px;
+    border-collapse: collapse;
+    background: white;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.city-table th {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+}
+
+.city-table td {
+    padding: 8px;
+    border: 1px solid gray;
+}
+
+.city-table tr:hover {
+    background-color: #f2f2f2;
+}
+</style> 
+
+<img src="Sales per months.png" class="graph-img" style="
+position: absolute;
+background: transparent;
+top: 75%;
+left: 71%;
+transform: translate(-50%, -50%);
+width: 410px;
+opacity: 1;
+">
+
+<img src="Cities.png" style="
+position: absolute;
+background: transparent;
+top: 83%;
+left: 40%;
+transform: translate(-50%, -50%);
+width: 150px;
+opacity: 1.8;
+">
+
+<img src="final pie percentage.png" style="
+position: absolute;
+top: 35%;
+left: 61%;
+transform: translate(-50%, -50%);
+width: 200px;
+opacity: 1.8;
+">
+
+<img src="Salesbar.png" style="
+position: absolute;
+top: 35%;
+left: 81%;
+transform: translate(-50%, -50%);
+width: 200px;
+opacity: 1.8;
+">
+<div style="display: flex;
+flex-direction: column;
+align-items: left;
+background: rgba(255, 255, 255, 0.15);
+backdrop-filter: blur(10px);
+padding: 20px;
+border-radius: 12px;
+width: 250px;">
+
+<input type="text" 
+       placeholder="Enter Product" 
+       min="0" 
+       step="1"
+       style="
+       padding:10px;
+       margin:10px;
+       border-radius:6px;
+       border:none;
+       width:200px;
+">
+<input type="number" 
+       placeholder="Enter Price (₹)" 
+       min="0" 
+       step="1"
+       style="
+       padding:10px;
+       margin:10px;
+       border-radius:6px;
+       border:none;
+       width:200px;
+">
+
+
+
+    
+<div>
+    <button onclick="addProduct()" text-align=center>Add Product</button>
+
+   
+    <button onclick="addPrice()">Add Price</button>
+    
+</div>
+<div id="productList" style="
+margin-top:30px;
+width:100%;
+background: rgba(255,255,255,0.2);
+border-radius:10px;
+padding:10px;
+color:white;
+font-size:14px;
+min-height:50px;
+
+">
+Products and Price :- 
+<div>
+    <p>Cricket Bat - ₹2500</p>
+    <p>Cricket Kit - ₹7000</p>
+    <p>Basket Ball - ₹1500</p>
+    <p>Football - ₹1000</p>
+</div>
+</div>
+
+
+<script>
+function addProduct() {
+
+    let product = document.querySelector("input[type='text']").value;
+    let price = document.querySelector("input[type='number']").value;
+
+    if(product === "" || price === ""){
+        alert("Please enter both product and price");
+        return;
+    }
+
+    let displayBox = document.getElementById("productList");
+
+    let newItem = document.createElement("p");
+    newItem.innerHTML = product + " - ₹" + price;
+
+    displayBox.appendChild(newItem);
+
+    // Clear inputs after adding
+    document.querySelector("input[type='text']").value = "";
+    document.querySelector("input[type='number']").value = "";
+}
+</script>
+
+
+
+
+
+</body>
+</html>
